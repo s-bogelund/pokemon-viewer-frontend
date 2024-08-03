@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { PokemonSearch } from './my-components/PokemonSearch'
 import { PokemonInfo } from './my-components/PokemonInfo'
 
-interface Pokemon {
+type Pokemon = {
   id: number
   name: string
   height: number
@@ -30,7 +30,7 @@ function App() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container flex flex-col items-center mx-auto mt-12 p-4 gap-6">
       <h1 className="text-2xl font-bold mb-4">Pokémon Viewer</h1>
       <PokemonSearch onSearch={handleSearch} />
       {pokemon && <PokemonInfo pokemon={pokemon} />}
